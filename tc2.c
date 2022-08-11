@@ -19,7 +19,7 @@ int main()
 		term = num/den;
 		sum = sum + term;
 		i= i + 2;
-		num = -num * x;
+		num = -num * x *x;
 		den = den * i * (i - 1);
 	}
 	while (fabs(term)>0.000001);
