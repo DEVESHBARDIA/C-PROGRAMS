@@ -29,6 +29,7 @@ void create_DLL(int n)
 {
 	for(int i=1;i<=n;i++)
 	{
+		
 		create();
 		if(i==1)
 			start = new_node;
@@ -47,14 +48,17 @@ void create_DLL(int n)
 void display()
 {
 	ptr = start;
+	int count = 0;
 	while(ptr!=NULL)
 	{
+		count++;
 		printf("%s\t",ptr->id);
 		printf("%s\t",ptr->name);
 		printf("%s\t",ptr->branch);
 		printf("%s\n",ptr->area);
 		ptr = ptr->next;
 	}
+	printf("Total nodes are: %d",count);
 }
 
 
@@ -101,9 +105,10 @@ void delete_at_end()
 	printf("Last node deleted!");
 }
 
+
 int main()
 {
-	int choice;
+	int choice,num;
 	while (1) 
 	{
 		printf("\n---------------------- Menu------------------------\n");
@@ -112,7 +117,9 @@ int main()
 		scanf("%d",&choice);
 		switch (choice)
 		{
-			case 1: create_DLL(2);
+			case 1: printf("Enter the number of professors: ");
+					scanf("%d",&num);
+					create_DLL(num);
 					break;
 			case 2: insert_at_front();
 					break;
